@@ -1,4 +1,3 @@
-
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
@@ -30,18 +29,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
     if text in categories:
         await update.message.reply_text(
-            f"💬 *مشاوره اولیه 60 دقیقه‌ای*
-"
-            f"💸 مبلغ: ۱,۰۰۰,۰۰۰ تومان
-"
-            f"📄 {categories[text]}
-
-"
-            f"لطفاً روش پرداخت را انتخاب کنید:
-"
-            f"💳 پرداخت آنلاین (زرین‌پال)
-"
-            f"🏦 ارسال فیش بانکی",
+            "💬 *مشاوره اولیه 60 دقیقه‌ای*\n"
+            "💸 مبلغ: ۱,۰۰۰,۰۰۰ تومان\n"
+            f"📄 {categories[text]}\n\n"
+            "لطفاً روش پرداخت را انتخاب کنید:\n"
+            "💳 پرداخت آنلاین (زرین‌پال)\n"
+            "🏦 ارسال فیش بانکی",
             parse_mode="Markdown"
         )
     else:
